@@ -1,5 +1,9 @@
 # bigrand
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Build Status](https://travis-ci.org/mbogner/bigrand.svg?branch=master)](https://travis-ci.org/mbogner/bigrand)
+[![codecov](https://codecov.io/gh/mbogner/bigrand/branch/master/graph/badge.svg)](https://codecov.io/gh/mbogner/bigrand)
+
 Library to create a big amount of random numbers in a reproducible way. Don't use this for anything security related!
 This only generates pseudo random numbers based on simple calculations and bit shifts. It is amazingly fast generating
 random data for different seeds.

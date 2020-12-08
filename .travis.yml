@@ -1,5 +1,6 @@
 language: java
-sudo: false
+os: linux
+dist: xenial
 install: true
 addons:
   sonarcloud:
