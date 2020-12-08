@@ -1,0 +1,39 @@
+plugins {
+    id "java"
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+dependencies {
+    testImplementation(platform('org.junit:junit-bom:5.7.0'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+
+    testImplementation(group: 'org.assertj', name: 'assertj-core', version: '3.18.1')
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+tasks.withType(Test) {
+    ignoreFailures = true
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+    forkEvery = 100
+    reports.html.enabled = false
+    reports.junitXml.enabled = false
+}
+
+tasks.withType(JavaCompile) {
+    options.fork = true
+}
+
+test {
+    useJUnitPlatform() // junit 5 tests
+}
+
+wrapper {
+    gradleVersion = "6.7.1"
+    distributionType = Wrapper.DistributionType.ALL
+}
