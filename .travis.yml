@@ -1,6 +1,6 @@
 language: java
 os: linux
-dist: xenial
+dist: focal
 install: true
 addons:
   sonarcloud:
@@ -8,7 +8,7 @@ addons:
     token:
       secure: '1a9f6f4795abb559633e71ddeebe9fcc8128c0a3'
 jdk:
-  - oraclejdk8
+  - openjdk11
 before_script:
   - chmod +x gradlew
 script:
