@@ -139,4 +139,14 @@ public class BigRand32 {
         return randSeeded(x, y, z, defaultSeed);
     }
 
+    public static int toSeed(final String str) {
+        if (null == str || str.length() < 1) {
+            return 0;
+        }
+        int result = 0;
+        for (int i = 0; i < str.length(); i++) {
+            result += 0xfff + str.charAt(i);
+        }
+        return result;
+    }
 }

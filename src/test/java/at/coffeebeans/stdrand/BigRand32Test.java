@@ -39,6 +39,12 @@ class BigRand32Test {
     }
 
     @Test
+    void toSeed() {
+        final int seed = BigRand32.toSeed("testing");
+        assertThat(seed).isEqualTo(29431);
+    }
+
+    @Test
     void testRand() {
         final int a = bean.rand(0);
         final int b = bean.rand(0, 0);

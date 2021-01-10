@@ -39,6 +39,12 @@ class BigRand64Test {
     }
 
     @Test
+    void toSeed() {
+        final long seed = BigRand64.toSeed("testing");
+        assertThat(seed).isEqualTo(459511L);
+    }
+
+    @Test
     void testRand() {
         final long a = bean.rand(0);
         final long b = bean.rand(0, 0);

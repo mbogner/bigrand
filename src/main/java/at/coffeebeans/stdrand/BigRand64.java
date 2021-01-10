@@ -139,4 +139,14 @@ public class BigRand64 {
         return randSeeded(x, y, z, defaultSeed);
     }
 
+    public static long toSeed(final String str) {
+        if (null == str || str.length() < 1) {
+            return 0L;
+        }
+        long result = 0L;
+        for (int i = 0; i < str.length(); i++) {
+            result += 0xffff + str.charAt(i);
+        }
+        return result;
+    }
 }
