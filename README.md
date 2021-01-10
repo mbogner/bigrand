@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Build Status](https://travis-ci.org/mbogner/bigrand.svg?branch=develop)](https://travis-ci.org/mbogner/bigrand)
 [![codecov](https://codecov.io/gh/mbogner/bigrand/branch/develop/graph/badge.svg)](https://codecov.io/gh/mbogner/bigrand)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmbogner%2Fbigrand.svg?type=small)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmbogner%2Fbigrand?ref=badge_small)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmbogner%2Fbigrand.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmbogner%2Fbigrand?ref=badge_shield)
 
 Library to create a big amount of random numbers in a reproducible way. Don't use this for anything security related!
 This only generates pseudo random numbers based on simple calculations and bit shifts. It is amazingly fast generating
