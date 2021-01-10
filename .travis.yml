@@ -2,11 +2,6 @@ language: java
 os: linux
 dist: focal
 install: true
-addons:
-  sonarcloud:
-    organization: 'mbogner-github'
-    token:
-      secure: '1a9f6f4795abb559633e71ddeebe9fcc8128c0a3'
 jdk:
   - openjdk11
 before_script:
@@ -14,7 +9,7 @@ before_script:
 script:
   - ./gradlew check
   - ./gradlew jacocoTestReport
-  - ./gradlew sonarqube
+  - ./gradlew codeCoverageReport
 cache:
   directories:
     - '$HOME/.m2/repository'
