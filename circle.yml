@@ -1,0 +1,4 @@
+test:
+  post:
+    - ./gradlew jacocoTestReport codeCoverageReport
+    - bash <(curl -s https://codecov.io/bash)
