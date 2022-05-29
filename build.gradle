@@ -1,6 +1,7 @@
 plugins {
     id "java"
-    id 'org.sonarqube' version '3.0'
+    // https://plugins.gradle.org/plugin/org.sonarqube
+    id 'org.sonarqube' version '3.3'
 }
 
 apply plugin: 'jacoco'
@@ -10,10 +11,12 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 dependencies {
-    testImplementation(platform('org.junit:junit-bom:5.7.0'))
+    // https://mvnrepository.com/artifact/org.junit/junit-bom
+    testImplementation(platform('org.junit:junit-bom:5.8.2'))
     testImplementation('org.junit.jupiter:junit-jupiter')
 
-    testImplementation(group: 'org.assertj', name: 'assertj-core', version: '3.18.1')
+    // https://mvnrepository.com/artifact/org.assertj/assertj-core
+    testImplementation('org.assertj:assertj-core:3.22.0')
 }
 
 repositories {
@@ -25,8 +28,6 @@ tasks.withType(Test) {
     ignoreFailures = true
     maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
     forkEvery = 100
-    reports.html.enabled = false
-    reports.junitXml.enabled = false
 }
 
 tasks.withType(JavaCompile) {
@@ -38,13 +39,7 @@ test {
 }
 
 wrapper {
-    gradleVersion = "6.7.1"
+    // https://gradle.org/releases/
+    gradleVersion = "7.4.2"
     distributionType = Wrapper.DistributionType.ALL
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        html.enabled false
-    }
 }
