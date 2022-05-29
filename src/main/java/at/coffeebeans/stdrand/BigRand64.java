@@ -10,22 +10,34 @@ package at.coffeebeans.stdrand;
  */
 public class BigRand64 {
 
-    private long defaultSeed = 0;
+    public static final long DEFAULT_SEED = 0;
 
     // distinctive and non boring bits - no extra requirements
-    private long bitNoise1 = 0b0110100011100011000111011010010001101000111000110001110110100100L;
-    private long bitNoise2 = 0b1011010100101001011110100100110110110101001010010111101001001101L;
-    private long bitNoise3 = 0b0001101101010110110001001110100100011011010101101100010011101001L;
+    public static final  long BIT_NOISE_1 = 0b0110100011100011000111011010010001101000111000110001110110100100L;
+    public static final  long BIT_NOISE_2 = 0b1011010100101001011110100100110110110101001010010111101001001101L;
+    public static final  long BIT_NOISE_3 = 0b0001101101010110110001001110100100011011010101101100010011101001L;
 
     // large primes with non boring bits for multiplication for more dimensions
-    private long prime1 = 0b0000101011111001010001000010000101011100000100000100000011110111L;
-    private long prime2 = 0b0000000011010011110000100001101111001111010001100110110110100001L;
+    public static final  long PRIME_1 = 0b0000101011111001010001000010000101011100000100000100000011110111L;
+    public static final  long PRIME_2 = 0b0000000011010011110000100001101111001111010001100110110110100001L;
+
+    private final long defaultSeed;
+    private final long bitNoise1;
+    private final long bitNoise2;
+    private final long bitNoise3;
+    private final long prime1;
+    private final long prime2;
 
     /**
      * Default constructor using default values.
      */
     public BigRand64() {
-
+        this.defaultSeed = DEFAULT_SEED;
+        this.bitNoise1 = BIT_NOISE_1;
+        this.bitNoise2 = BIT_NOISE_2;
+        this.bitNoise3 = BIT_NOISE_3;
+        this.prime1 = PRIME_1;
+        this.prime2 = PRIME_2;
     }
 
     /**

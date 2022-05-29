@@ -6,26 +6,37 @@ package at.coffeebeans.stdrand;
  * <br/>
  * <b>!!! Don't use this for security applications as this is NOT a real RNG!!!</b><br/>
  * * <br/>
- * * For 32-bit version see {@link BigRand64}
+ * * For 64-bit version see {@link BigRand64}
  */
 public class BigRand32 {
 
-    private int defaultSeed = 0;
+    public static final int DEFAULT_SEED = 0;
 
-    // distinctive and non boring bits - no extra requirements
-    private int bitNoise1 = 0b01101000111000110001110110100100;
-    private int bitNoise2 = 0b10110101001010010111101001001101;
-    private int bitNoise3 = 0b00011011010101101100010011101001;
+    // distinctive and non-boring bits - no extra requirements
+    public static final int BIT_NOISE_1 = 0b01101000111000110001110110100100;
+    public static final int BIT_NOISE_2 = 0b10110101001010010111101001001101;
+    public static final int BIT_NOISE_3 = 0b00011011010101101100010011101001;
+    // large primes with non-boring bits for multiplication for more dimensions
+    public static final int PRIME_1 = 0b1011110101001011110010110101;
+    public static final int PRIME_2 = 0b0000011000111101011010001101;
 
-    // large primes with non boring bits for multiplication for more dimensions
-    private int prime1 = 0b1011110101001011110010110101;
-    private int prime2 = 0b0000011000111101011010001101;
+    private final int defaultSeed;
+    private final int bitNoise1;
+    private final int bitNoise2;
+    private final int bitNoise3;
+    private final int prime1;
+    private final int prime2;
 
     /**
      * Default constructor using default values.
      */
     public BigRand32() {
-
+        this.defaultSeed = DEFAULT_SEED;
+        this.bitNoise1 = BIT_NOISE_1;
+        this.bitNoise2 = BIT_NOISE_2;
+        this.bitNoise3 = BIT_NOISE_3;
+        this.prime1 = PRIME_1;
+        this.prime2 = PRIME_2;
     }
 
     /**
